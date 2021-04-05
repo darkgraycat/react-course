@@ -1,19 +1,9 @@
 import React from 'react'
 
-const Hello = () => {
+const App = props => {
+  const { counter } = props
   return (
-    <div>
-      <p>Hello world</p>
-    </div>
-  )
-}
-
-const App = () => {
-  return (
-    <div>
-      <h1>Greetings</h1>
-      <Hello />
-    </div>
+    <div>{counter}</div>
   )
 }
 
