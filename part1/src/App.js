@@ -21,6 +21,8 @@ const App = () => {
       <Button handleClick={handleLeftClick} text='left' />
       <Button handleClick={handleRightClick} text='right' />
       <History allClicks={allClicks} />
+      <Hello />
+      <EventTest />
     </div>
   )
 }
@@ -37,8 +39,32 @@ const History = ({ allClicks }) => {
   )
 }
 
+const Hello = () => {
+  const hello = (who) => () => console.log('hello', who)
+  return (
+    <div>
+      <Button handleClick={hello('world')} text='to world' />
+      <Button handleClick={hello('react')} text='to react' />
+      <Button handleClick={hello('people')} text='to people' />
+    </div>
+  )
+}
+
+const EventTest = () => {
+  const [value, setValue] = useState(0)
+  const setToValue = (value) => () => setValue(value)
+  return (
+    <div>
+      {value}
+      <br />
+      <button onClick={setToValue(0)}>reset</button>
+      <button onClick={setToValue(100)}>hundred</button>
+      <button onClick={setToValue(value + 1)}>+1</button>
+    </div >
+  )
+}
+
 const Display = ({ left, right }) => <div>{left}:{right}</div>
 const Button = ({ handleClick, text }) => <button onClick={handleClick}>{text}</button>
-
 
 export default App
