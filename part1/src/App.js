@@ -20,7 +20,20 @@ const App = () => {
       <Display left={left} right={right} />
       <Button handleClick={handleLeftClick} text='left' />
       <Button handleClick={handleRightClick} text='right' />
-      <p>{allClicks.join(' ')}</p>
+      <History allClicks={allClicks} />
+    </div>
+  )
+}
+
+const History = ({ allClicks }) => {
+  if (allClicks.length == 0) return (
+    <div>
+      the app is used by pressing the buttons
+    </div>
+  )
+  return (
+    <div>
+      button press history: {allClicks.join(' ')}
     </div>
   )
 }
