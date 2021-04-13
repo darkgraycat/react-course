@@ -1,19 +1,31 @@
 import React, { useState } from 'react'
 
-const Display = ({ value }) => <div>{value}</div>
-const Button = ({ handler, text }) => <button onClick={handler}>{text}</button>
+// const Button = ({ handler, text }) => <button onClick={handler}>{text}</button>
 
-const App = () => {
-  const [value, setValue] = useState(10)
-  const setToValue = value => setValue(value)
+const Display = props => {
   return (
-    <>
-      <Display value={value} />
-      <Button handler={() => setToValue(1000)} text="thousand" />
-      <Button handler={() => setToValue(0)} text="reset" />
-      <Button handler={() => setToValue(value + 1)} text="increment" />
-    </>
+    <div>{props.counter}</div>
   )
 }
+
+
+const App = () => {
+  const [counter, setCounter] = useState(0)
+
+  const increaseByOne = () => setCounter(counter + 1)
+  const setToZero = () => setCounter(0)
+
+  return (
+    <div>
+      <Display counter={counter} />
+      <button onClick={increaseByOne}>plus</button>
+      <button onClick={setToZero}>zero</button>
+    </div>
+  )
+}
+
+
+
+
 
 export default App
