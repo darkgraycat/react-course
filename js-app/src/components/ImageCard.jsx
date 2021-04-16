@@ -1,10 +1,12 @@
 import React from 'react'
+import './ImageCard.css'
 
-const ImageCard = ({ source, description }) => {
+const ImageCard = ({ source, header, children }) => {
   return (
-    <div className="image-card">
+    <div className="ImageCard">
       <img src={source} alt="" />
-      <div>{description}</div>
+      <h4>{header}</h4>
+      <div>{children}</div>
     </div>
   )
 }

@@ -1,0 +1,26 @@
+.ImageCard {
+  background-color: #eee;
+  max-width: 200px;
+  height: 400px;
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.ImageCard > img {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ImageCard > div {
+  font-size: 16px;
+  text-align: justify;
+}
+
+.ImageCard > h4 {
+  font-size: 18px;
+  margin: 10px;
+  text-align: center;
+}
